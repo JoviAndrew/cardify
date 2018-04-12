@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 node_modules
 .env
+=======
+.env
+node_modules
+testImage
+>>>>>>> 3d5d417a890e192e3bee9453ccfae6a142667190
