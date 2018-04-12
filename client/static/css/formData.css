@@ -1,0 +1,19 @@
+img {
+  max-width: 300px;
+}
+
+div .name {
+  padding-left: 300px;
+}
+
+div .email {
+  padding-left: 100px;
+}
+
+div .c-name {
+  padding-left: 200px;
+}
+
+div .c-add {
+  padding-left: 400px;
+}
