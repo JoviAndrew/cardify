@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const index = require('../contorllers/index_controller');
+const index = require('../controllers/index_controller');
 
 //Register new User
 router.post('/register', index.registerUser);

@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+  <script src="loginFB.js"></script>
+    <!--
+      Below we include the Login Button social plugin. This button uses
+      the JavaScript SDK to present a graphical Login button that triggers
+      the FB.login() function when clicked.
+    -->
+  <div id="loginfbbtn" scope="public_profile,email" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
 </body>
 </html>
