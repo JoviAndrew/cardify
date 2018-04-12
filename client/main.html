@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
-  <div class="row">
+  <!-- Navbar -->
+  <div class="row mx-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12 px-5">
         <a class="navbar-brand" href="#">CompanyName</a>
         
@@ -33,7 +34,47 @@
     </nav>
   </div>
 
+  
   <div class="container" id="app">
+    <div class="col-md-8 offset-md-2 pt-5 text-center">
+      <img class="d-block mx-auto mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+      <h2>Checkout form</h2>
+      <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+    </div>
+
+    <!-- Cards Preview -->
+    <div>
+      <h5 v-if="name" class="name">{{ name }}</h5>
+      <h5 v-if="email" class="email">{{ email }}</h5>
+      <h5 v-if="companyName" class="c-name">{{ companyName }}</h5>
+      <h5 v-if="companyAddress" class="c-add">{{ companyAddress }}</h5>
+      <div v-if="image" class="i-mage">
+        <img :src="image" />
+      </div>
+    </div>
+
+    <form class="col-md-8 offset-md-2 p-5 border" v-on:submit.prevent="formData">
+      <div class="form-group">
+        
+
+        <!-- <label for="exampleFormControlInput1">Name</label>
+        <input class="form-control" type="text" name="name" value="" placeholder="Your Name">
+        <label>Email</label>
+        <input class="form-control" type="text" name="email" value="" placeholder="name@example.com">
+        <label>Phone Number</label>
+        <input class="form-control" type="text" name="email" value="" placeholder="+(62) 81xx-xxxx-xxx">
+        <label>Company Name</label>
+        <input class="form-control" type="text" name="companyName" value="" placeholder="Company Name">
+        <label>Company Address</label>
+        <input class="form-control" type="text" name="companyAddress" value="" placeholder="Company Address">
+
+        <div @change="onFileChange">
+          <input type="file" name="logo" value="">
+        </div>
+      
+        <button type="submit" name="button">Submit</button> -->
+      </div>
+    </form>
 
   </div>
 
@@ -41,6 +82,6 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="src/js/appMain.js"></script>
+  <script src="src/js/app-main.js"></script>
 </body>
 </html>
