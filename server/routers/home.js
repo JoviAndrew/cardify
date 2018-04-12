@@ -31,8 +31,13 @@ const upload = multer({
 
 
 //Route upload image
-router.post('/upload', upload.single('fileImage'), home.newCardData);
+router.post('/upload', upload.single('fileImage'),
+// home.newCardData
+(req, res) => console.log('belom kelar'));
 
-router.get('/show', home.getData);
+router.get('/show',
+// home.getData
+(req, res) => console.log('belom kelar')
+);
 
 module.exports = router;
