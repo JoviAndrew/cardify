@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="./static/css/formData.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id="app">
+      <h5 v-if="name" class="name">{{ name }}</h5>
+      <h5 v-if="email" class="email">{{ email }}</h5>
+      <h5 v-if="companyName" class="c-name">{{ companyName }}</h5>
+      <h5 v-if="companyAddress" class="c-add">{{ companyAddress }}</h5>
+      <div v-if="image" class="i-mage">
+        <img :src="image" />
+      </div>
+      <form v-on:submit.prevent="formData" @change="onFileChange">
+        <div class="">
+          <input type="text" name="name" value="" placeholder="name">
+        </div>
+        <div class="">
+          <input type="text" name="email" value="" placeholder="email">
+        </div>
+        <div class="">
+          <input type="text" name="companyName" value="" placeholder="company name">
+        </div>
+        <div class="">
+          <input type="text" name="companyAddress" value="" placeholder="company address">
+        </div>
+        <div class="">
+          <button type="submit" name="button">Submit</button>
+        </div>
+      </form>
+      <div class="">
+        <input type="file" name="logo" value="">
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          name: '',
+          company: '',
+          companyName: '',
+          companyAddress: '',
+          image: ''
+        },
+        methods: {
+          formData(event){
+            this.name = event.target.elements.name.value
+            this.email = event.target.elements.email.value
+            this.companyName = event.target.elements.companyName.value
+            this.companyAddress = event.target.elements.companyAddress.value
+            event.target.reset()
+          },
+          onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length)
+            return
+            this.createImage(files[0])
+          },
+          createImage(file) {
+            var image = new Image()
+            var reader = new FileReader()
+            reader.onload = (e) => {
+              this.image = e.target.result;
+            };
+            reader.readAsDataURL(file)
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
