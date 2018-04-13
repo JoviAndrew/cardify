@@ -9,5 +9,14 @@ Vue.component('card-front', {
     </div>
   </div>
   `,
-  props: ['card-data']
+  props: ['card-data'],
+
+  data: function () {
+    this.cardData.name = localStorage.getItem('name')
+    this.cardData.email = localStorage.getItem('email')
+    this.cardData.phone = localStorage.getItem('phone')
+    this.cardData.companyName = localStorage.getItem('companyName')
+    this.cardData.companyAddress = localStorage.getItem('companyAddress')
+    this.cardData.image = localStorage.getItem('image')
+  }
 })
