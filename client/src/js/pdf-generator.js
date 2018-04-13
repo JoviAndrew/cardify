@@ -1,6 +1,5 @@
 const pdfcrowd = require("pdfcrowd");
 
-// create the API client instance
 const client = new pdfcrowd.HtmlToPdfClient("agung_caproex", "250e48639e6050d6839fafe9e900c420");
 
 module.exports = {
@@ -48,10 +47,10 @@ module.exports = {
 //       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 //     </head>
 //     <body>
-    
+
 //     <div class="container">
 //       <h2>Black/Dark Table</h2>
-//       <p>The .table-dark class adds a black background to the table:</p>            
+//       <p>The .table-dark class adds a black background to the table:</p>
 //       <table class="table table-dark">
 //         <thead>
 //           <tr>
@@ -82,7 +81,7 @@ module.exports = {
 //           <img src="https://www.pindad.com/uploads/images/product/full/SS2-V4HB.jpg" alt="">
 //       </div>
 //     </div>
-    
+
 //     </body>
 //     </html>
 //     `,

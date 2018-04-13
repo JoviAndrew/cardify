@@ -29,6 +29,7 @@ new Vue({
 
     onFileChange(event) {
       var files = event.target.elements.logo.files
+      console.log(files[0])
       this.createImage(files[0])
     },
 
