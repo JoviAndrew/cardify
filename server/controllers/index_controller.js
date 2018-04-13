@@ -24,26 +24,33 @@ module.exports = {
 =======
   loginUser: function(req, res){
       User.findOne({
-        email: req.body.email
+        idFB: req.body.obj.idFB
       })
       .then(userData => {
       if(userData == null) {
-        const newUser = new User(req.body)
+        const newUser = new User(req.body.obj)
         newUser.save()
         .then(data => {
+<<<<<<< HEAD
           let token = jwt.sign({ id: data._id, name: data.name }, 'shhhhh');
 >>>>>>> resolved conflict
+=======
+          let token = jwt.sign({ id: data._id, name: data.name }, process.env.SECRET);
+>>>>>>> logout lagi
 
           res.status(200).json({
             token: token
           })
         })
 <<<<<<< HEAD
+<<<<<<< HEAD
     }
 =======
+=======
+        .catch(err => console.log(err))
+>>>>>>> logout lagi
       } else {
-        let token = jwt.sign({ id: userData._id, name: userData.name }, 'shhhhh');
-
+        let token = jwt.sign({ id: userData._id, name: userData.name }, process.env.SECRET);
         res.status(200).json({
           token: token
         })
