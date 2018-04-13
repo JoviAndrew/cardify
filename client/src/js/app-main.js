@@ -18,17 +18,15 @@ new Vue({
       this.cardData.phone = event.target.elements.phone.value
       this.cardData.companyName = event.target.elements.companyName.value
       this.cardData.companyAddress = event.target.elements.companyAddress.value
+      this.onFileChange(event)
       event.target.reset()
     },
 
-    onFileChange(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      console.log(files)
-      // if (!files.length)
-      // return
+    onFileChange(event) {
+      var files = event.targest.elements.logo.files
       this.createImage(files[0])
     },
-    
+
     createImage(file) {
       var image = new Image()
       var reader = new FileReader()
