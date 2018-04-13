@@ -3,7 +3,8 @@ const Schema = mongoose.Schema
 
 let userSchema = mongoose.Schema({
     name: String,
-    email: String
+    email: String,
+    card: String
 }, {
     timestamps: true
 })

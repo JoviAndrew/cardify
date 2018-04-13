@@ -21,10 +21,6 @@ db.once('open', function() {
   // we're connected!
   console.log("succesfully connected to db !");
 });
-//=====================
-//Directory image upload!
-//=====================
-
 
 app.use(express.static('./')); // serve all files in root folder, such as index.html
 app.use(cors())
