@@ -34,7 +34,6 @@ module.exports = {
             newUser.save()
             .then(data => {
               let token = jwt.sign({ id: data._id, name: data.name }, 'shhhhh');
-
               res.status(200).json({
                 token: token
               })
@@ -79,7 +78,7 @@ module.exports = {
         //     })
         //
         // }
-    }
+  }
     // ,
     // loginUser: function(req, res){
     //   console.log(req.body);
