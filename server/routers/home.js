@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const home = require('../controllers/home_controller')
-const uploadFile = require('../helper/upload');
+const uploadFile = require('../middleware/upload');
 
 //Route upload file
 router.post('/upload', 
