@@ -8,16 +8,19 @@ const storage = Storage({
     keyFilename: process.env.GCS_KEYFILE_PATH,
 })
 
-const getPublicUrl = (filename) => {
+const bucket = storage.bucket(CloudBucket);
+
+const getPublicUrl = function(filename) {
     return `https://storage.googleapis.com/${CloudBucket}/${filename}`
-  }
+}
+
 
 const sendUploadToGCS = function(req, res, next){
     if(!req.file){
         return next();
     }else{
         let gcsfilename = new Date().toISOString() + req.file.originalname;
-        let file = bucket.file(fileName);
+        let file = bucket.file(gcsfilename);
 
         const stream = file.createWriteStream({
             metadata: {
