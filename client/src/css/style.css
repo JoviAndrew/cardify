@@ -1,0 +1,36 @@
+body {
+  font-family: 'Montserrat', sans-serif
+}
+
+.bg-primary {
+  background-color: #e37222!important;
+}
+
+h5 {
+  font-size: 95%;
+}
+
+img.cardCompanyLogo1 {
+  position: relative;
+  top: -190px;
+  left: 10%;
+}
+
+img.cardCompanyLogo2 {
+  position: relative;
+  top: -390px;
+  left: 335px;
+}
+
+.cardData {
+  position: relative;
+  top: -150px;
+  left: -30px;
+}
+
+h5.cardCompanyName {
+  font-weight: bolder;
+  font-size: 115%;
+  position: relative;
+  top: -20px
+}
