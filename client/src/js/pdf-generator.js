@@ -3,6 +3,18 @@ const pdfcrowd = require("pdfcrowd");
 // create the API client instance
 const client = new pdfcrowd.HtmlToPdfClient("agung_caproex", "250e48639e6050d6839fafe9e900c420");
 
+module.exports = {
+    convertPdf: function(){
+        client.convertUrlToFile(
+            "http://127.0.0.1:8080/print-card.html",
+            "example.pdf",
+            function(err, fileName) {
+                if (err) return console.error("Pdfcrowd Error: " + err);
+                console.log("Success: the file was created " + fileName);
+            });
+    }
+}
+
 // run the conversion and write the result to a file
 // client.convertFileToFile(
 //     "/home/gonfreecs/HACKTIV8/Phase2/Week2/ecommerce-layout/client/home.html",
@@ -14,13 +26,13 @@ const client = new pdfcrowd.HtmlToPdfClient("agung_caproex", "250e48639e6050d683
 
 
 // run the conversion and write the result to a file
-client.convertUrlToFile(
-    "http://bucket.cardify-hacktiv.xyz/",
-    "example.pdf",
-    function(err, fileName) {
-        if (err) return console.error("Pdfcrowd Error: " + err);
-        console.log("Success: the file was created " + fileName);
-    });
+// client.convertUrlToFile(
+//     "http://bucket.cardify-hacktiv.xyz/print-card.html",
+//     "example.pdf",
+//     function(err, fileName) {
+//         if (err) return console.error("Pdfcrowd Error: " + err);
+//         console.log("Success: the file was created " + fileName);
+//     });
 
 // run the conversion and write the result to a file
 // client.convertStringToFile(
