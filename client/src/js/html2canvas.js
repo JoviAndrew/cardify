@@ -34,7 +34,7 @@ function captureCard() {
 
       console.log('formdata', formData)
 
-      axios.post('http://localhost:3000/home/upload', formData, {
+      axios.post('http://backend.cardify-hacktiv.xyz:3000/home/upload', formData, {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then(response => {

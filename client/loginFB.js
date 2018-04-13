@@ -6,7 +6,7 @@ function statusChangeCallback(response) {
     testAPI();
   } else {
 
-    if (window.location.href != 'http://localhost:8080/index.html') {
+    if (window.location.href != 'http://bucket.cardify-hacktiv.xyz/index.html/index.html') {
       window.location.href="index.html"
     }
   }
@@ -48,7 +48,7 @@ function testAPI() {
       idFB: response.id,
       name: response.name
     }
-    axios.post('http://localhost:3000/login', {
+    axios.post('http://backend.cardify-hacktiv.xyz:3000/login', {
       obj
     },{})
     .then((res)=>{
