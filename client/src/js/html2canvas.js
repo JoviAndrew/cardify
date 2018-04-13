@@ -38,7 +38,8 @@ function captureCard() {
         headers: {'Content-Type': 'multipart/form-data'}
       })
       .then(response => {
-        console.log('success upload', response)
+        console.log('success upload', response.data.link)
+        localStorage.setItem('link', response.data.link)
       })
       .catch(err => {
         console.log('failed upload', err)
