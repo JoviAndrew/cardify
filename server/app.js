@@ -22,6 +22,7 @@ db.once('open', function() {
   console.log("succesfully connected to db !");
 });
 
+app.use(morgan('dev'))
 app.use(express.static('./')); // serve all files in root folder, such as index.html
 app.use(cors())
 app.use(express.json());

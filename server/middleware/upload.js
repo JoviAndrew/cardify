@@ -5,7 +5,7 @@ const CloudBucket = process.env.GCS_BUCKET;
 
 const storage = Storage({
     projectId: process.env.GCS_PROJECTID,
-    keyFilename: process.env.GCS_KEYFILE_PATH,
+    keyFilename: 'cardify-bucket.json',
 })
 
 const bucket = storage.bucket(CloudBucket);
@@ -16,6 +16,8 @@ const getPublicUrl = function(filename) {
 
 
 const sendUploadToGCS = function(req, res, next){
+    console.log(req.body)
+    console.log('MASUK SEND UPLOAD', req.file)
     if(!req.file){
         return next();
     }else{
@@ -29,6 +31,7 @@ const sendUploadToGCS = function(req, res, next){
         })
 
         stream.on('error', (err) => {
+            console.log('MASUK DAB')
             req.file.cloudStorageError = err
             next(err)
         })
@@ -48,7 +51,7 @@ const sendUploadToGCS = function(req, res, next){
 const multer = Multer({
     storage: Multer.MemoryStorage,
     limits: {
-        fileSize: 1024 * 1024 * 5
+        fileSize: 1024 * 1024 * 50
     }
 })
 
