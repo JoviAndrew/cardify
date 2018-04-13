@@ -13,21 +13,23 @@
   <!-- Navbar -->
   <div class="row mx-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12 px-5">
+<<<<<<< 602eaec8007bcbf138829fccfe1b2fa99f43671a
       <a class="navbar-brand" href="#">CompanyName</a>
 
+=======
+      <a class="navbar-brand" href="#">Cardify</a>
+      
+>>>>>>> progress print card page
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="#">Home</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#">Main</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
       </div>
@@ -75,7 +77,19 @@
       </div>
 
       <div class="col-md-6">
-        <business-card :card-data="cardData"></business-card>
+        <!-- <business-card :card-data="cardData"></business-card> -->
+        <div class="border p-3">
+        <h1 class="text-center">Preview</h1>
+          <!-- Cards Preview -->
+          <!-- Front -->
+          <card-front :card-data="cardData"></card-front>
+          <!-- Back -->
+          <card-back :card-data="cardData"></card-back>
+        </div>
+
+        <div class="">
+          <a href="print-card.html" class="btn btn-primary">Submit</a>
+        </div>
       </div>
     </div>
   </div>
@@ -84,7 +98,8 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="src/js/card-component.js"></script>
+  <script src="src/js/card-front-component.js"></script>
+  <script src="src/js/card-back-component.js"></script>
   <script src="src/js/app-main.js"></script>
 </body>
 </html>
