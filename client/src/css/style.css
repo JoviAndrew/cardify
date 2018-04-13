@@ -18,7 +18,7 @@ img.cardCompanyLogo1 {
 
 img.cardCompanyLogo2 {
   position: relative;
-  top: -390px;
+  top: -380px;
   left: 335px;
 }
 
@@ -33,6 +33,11 @@ h5.cardCompanyName {
   font-size: 115%;
   position: relative;
   top: -20px
+}
+
+canvas {
+  max-width: 100%;
+  min-width: 100%;
 }
 
 .fb-login-button {
