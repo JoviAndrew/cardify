@@ -2,51 +2,37 @@ require('dotenv').config();
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-var multer  = require('multer')
+const cors = require('cors')
+const FB = require('fb')
 
+const morgan = require('morgan')
 
-const indexRouter = require('./routers/index'); 
+const indexRouter = require('./routers/index');
 const homeRouter = require('./routers/home')
 
 //=====================
 //Directory Database!
 //=====================
 mongoose.connect('mongodb://localhost/cardify');
-
-
+// mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds241699.mlab.com:41699/cardify`);
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  // we're connected!
+  console.log("succesfully connected to db !");
+});
 //=====================
 //Directory image upload!
 //=====================
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, '../testImage')
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname + '-' + Date.now() + '-' + getExtension(file));
-    }
-});
 
-function getExtension(file) {
-    // this function gets the filename extension by determining mimetype. To be exanded to support others, for example .jpeg or .tiff
-    var res = '';
-    if (file.mimetype === 'image/jpeg') res = '.jpg';
-    if (file.mimetype === 'image/png') res = '.png';
-    return res;
-}
 
 app.use(express.static('./')); // serve all files in root folder, such as index.html
-
-var upload = multer({ 
-    storage: storage 
-}).fields([
-    {name: "filename", maxCount: 1}
-])
-
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter)
-app.use('/home', todoRouter)
+app.use('/home', homeRouter)
 
 app.listen(3000, () =>{
     console.log('listening on port 3000')
