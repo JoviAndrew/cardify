@@ -27,6 +27,9 @@
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
           </li>
+          <li class="nav-item">
+            <div id="loginfbbtn" scope="public_profile,email" class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" autologoutlink="true" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+          </li>
         </ul>
       </div>
     </nav>
@@ -41,9 +44,8 @@
       </div>
     </div>
   </div>
-  <div class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="continue_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="true" onlogin="checkLoginState();"></div>
-  <!-- <div id="loginfbbtn" scope="public_profile,email" class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" autologoutlink="true" data-use-continue-as="false" onlogin="checkLoginState();"></div> -->
-  <!-- <button class="btn btn-outline-light my-2 my-sm-0" onclick="logout()">Logout</button> -->
+  <!-- <div id="loginfbbtn" scope="public_profile,email" class="fb-login-button" data-max-rows="1" data-size="medium" data-button-type="login_with" data-show-faces="false" autologoutlink="true" data-use-continue-as="false" onlogin="checkLoginState();"></div> -->
+
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

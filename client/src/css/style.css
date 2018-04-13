@@ -34,3 +34,8 @@ h5.cardCompanyName {
   position: relative;
   top: -20px
 }
+
+.fb-login-button {
+  margin-top: 7px;
+  margin-left: 6px;
+}

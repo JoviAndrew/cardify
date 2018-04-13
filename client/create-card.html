@@ -13,8 +13,9 @@
   <!-- Navbar -->
   <div class="row mx-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12 px-5">
+
       <a class="navbar-brand" href="#">Cardify</a>
-      
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -25,6 +26,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <div id="loginfbbtn" scope="public_profile,email" class="fb-login-button" data-max-rows="1" data-size="small" data-button-type="login_with" data-show-faces="false" autologoutlink="true" data-use-continue-as="false" onlogin="checkLoginState();"></div>
           </li>
         </ul>
       </div>
@@ -86,7 +90,7 @@
               <button class="btn btn-primary"> submit </button>
             </form>
           </div>
-          
+
           <!-- Cards Preview -->
           <!-- Front -->
           <card-front :card-data="cardData"></card-front>
@@ -105,5 +109,6 @@
   <script src="src/js/card-front-component.js"></script>
   <script src="src/js/card-back-component.js"></script>
   <script src="src/js/app-main.js"></script>
+  <script src="loginFB.js"></script>
 </body>
 </html>

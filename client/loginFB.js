@@ -53,22 +53,10 @@ function testAPI() {
     },{})
     .then((res)=>{
       localStorage.setItem('token', res.data.token);
+      window.location.href='create-card.html'
     })
     .catch((err)=>{
       console.log('ini error------->',err);
     });
   });
 }
-//
-// function logout() {
-//
-//   FB.getLoginStatus(function(response) {
-//     if (response.status === 'connected') {
-//       FB.logout(function(response) {
-//         console.log('logout', response);
-//         localStorage.clear()
-//         location.reload()
-//       });
-//     }
-//   })
-// }
