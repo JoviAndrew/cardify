@@ -63,8 +63,8 @@
     
           <div class="mb-2" @change="onFileChange">
             <label>Company Logo</label>
-            <div v-if="image">
-              <img :src="image" class="m-2" style="height: 75px;"/>
+            <div v-if="cardData.image">
+              <img :src="cardData.image" class="m-2" style="height: 75px;"/>
             </div>
             <input type="file" class="form-control-file" name="logo" value="">
           </div>
@@ -75,33 +75,7 @@
       </div>
   
       <div class="col-md-6">
-        <div class="border p-3">
-          <h1 class="text-center">Preview</h1>
-          <!-- Cards Preview -->
-          <!-- Front -->
-          <div>
-            <p>Front</p>
-            <img src="src/img/template-A-1.png" style="width: 100%;" alt="">
-            <div v-if="image">
-              <img :src="image" class="cardCompanyLogo1" style="height:100px;"/>              
-            </div>
-          </div>
-          <!-- Back -->
-          <div class="backCard  ">
-            <p>Back</p>
-            <img src="src/img/Template-A-2.png" style="width: 100%;" alt="">
-            <div v-if="image">
-              <div class="cardData text-right">
-                <h5 class="cardCompanyName" v-if="companyName">{{ companyName }}</h5>
-                <h5 v-if="name">{{ name }}</h5>
-                <h5 v-if="email">{{ email }}</h5>
-                <h5 v-if="phone">{{ phone }}</h5>
-                <h5 v-if="companyAddress">{{ companyAddress }}</h5>
-              </div>
-              <img :src="image" class="cardCompanyLogo2" style="height: 75px;"/>
-            </div>
-          </div>
-        </div>
+        <business-card :card-data="cardData"></business-card>
       </div>
     </div>
   </div>
@@ -110,6 +84,7 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="src/js/card-component.js"></script>
   <script src="src/js/app-main.js"></script>
 </body>
 </html>

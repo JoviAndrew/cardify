@@ -1,18 +1,23 @@
 new Vue({
   el: '#app',
   data: {
-    name: '',
-    company: '',
-    companyName: '',
-    companyAddress: '',
-    image: ''
+    cardData: {
+      name: '',
+      company: '',
+      email: '',
+      phone: '',
+      companyName: '',
+      companyAddress: '',
+      image: ''
+    }
   },
   methods: {
     formData(event){
-      this.name = event.target.elements.name.value
-      this.email = event.target.elements.email.value
-      this.companyName = event.target.elements.companyName.value
-      this.companyAddress = event.target.elements.companyAddress.value
+      this.cardData.name = event.target.elements.name.value
+      this.cardData.email = event.target.elements.email.value
+      this.cardData.phone = event.target.elements.phone.value
+      this.cardData.companyName = event.target.elements.companyName.value
+      this.cardData.companyAddress = event.target.elements.companyAddress.value
       event.target.reset()
     },
 
@@ -28,7 +33,7 @@ new Vue({
       var image = new Image()
       var reader = new FileReader()
       reader.onload = (e) => {
-        this.image = e.target.result;
+        this.cardData.image = e.target.result;
       };
       reader.readAsDataURL(file)
     }
