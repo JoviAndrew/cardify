@@ -14,7 +14,7 @@
   <div class="row mx-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary col-12 px-5">
       <a class="navbar-brand" href="#">CompanyName</a>
-      
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -34,11 +34,11 @@
     </nav>
   </div>
 
-  
+
   <div class="container pt-4" id="app">
     <div class="row mx-0">
       <div class="col-md-6">
-        <form class="border p-3" v-on:submit.prevent="formData">  
+        <form class="border p-3" v-on:submit.prevent="formData">
           <h1 class="text-center mb-3">Input Data</h1>
           <div class="form-group">
             <label>Name</label>
@@ -60,20 +60,20 @@
             <label>Company Address</label>
             <input type="text" class="form-control" name="companyAddress" value="South Jakarta, Indonesia" placeholder="Company Address">
           </div>
-    
-          <div class="mb-2" @change="onFileChange">
+
+          <div class="mb-2">
             <label>Company Logo</label>
             <div v-if="cardData.image">
               <img :src="cardData.image" class="m-2" style="height: 75px;"/>
             </div>
             <input type="file" class="form-control-file" name="logo" value="">
           </div>
-        
+
           <button type="submit" class="btn btn-primary" name="button">Submit</button>
         </form>
-  
+
       </div>
-  
+
       <div class="col-md-6">
         <business-card :card-data="cardData"></business-card>
       </div>
