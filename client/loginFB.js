@@ -72,32 +72,16 @@ window.fbAsyncInit = function() {
 // Here we run a very simple test of the Graph API after login is
 // successful.  See statusChangeCallback() for when this call is made.
 function testAPI() {
-  FB.api('/me', {fields: ['name', 'email', 'picture']}, function(response) {
+  FB.api('/me', {fields: ['name', 'email']}, function(response) {
     console.log(response.name);
-    // localStorage.setItem('photo', response.picture.data.url)
     localStorage.setItem('name', response.name)
-    // axios({
-    //   method: 'post',
-    //   url: 'http://localhost:3000/login',
-    //   data: {
-    //     email: response.email,
-    //     name: response.name
-    //   }
-    // })
+
     axios.post('http://localhost:3000/login', {
-    email: response.email,
-    name: response.name
-  })
+      email: response.email,
+      name: response.name
+    },{})
     .then((res)=>{
       localStorage.setItem('token', res.data.token);
-      if(res.data.status === 'login'){
-        // email-nya udah, cuma lempar token
-        alert(res.data.message)
-      } else if(res.data.status === 'register'){
-        // email-nya enggak ada, register trus lempar token
-        alert(res.data.message)
-      }
-      window.location.replace('./index.html')
     })
     .catch((err)=>{
       console.log('ini error------->',err);
@@ -116,66 +100,4 @@ function logout() {
       });
     }
   })
-}
-//
-// function register(name, email, password) {
-//   // let name = document.getElementById('name').value
-//   // let email = document.getElementById('email').value
-//   // let password = document.getElementById('password').value
-//
-//   console.log([name, email, password]);
-//
-//   axios({
-//     method: 'post',
-//     url: 'http://localhost:3000/users/register',
-//     data: {
-//       name: name,
-//       email: email,
-//       password: password
-//     }
-//   })
-//   .then((res)=>{
-//     console.log(res);
-//     localStorage.setItem('token', res.data.token);
-//     if(res.data.already_registered === 'true'){
-//       console.log('udah ada akunnya');
-//       // email-nya udah, cuma lempar token
-//       alert(res.data.message)
-//     } else if(res.data.already_registered === 'false'){
-//       console.log('blom ada, regis berhasil');
-//       // email-nya enggak ada, register trus lempar token
-//       alert(res.data.message)
-//     }
-//   })
-//   .catch((err)=>{
-//     console.log('ini error------->',err);
-//   });
-// }
-
-function login (email, password) {
-  axios({
-    method: 'post',
-    url: 'http://localhost:3000/users/signin',
-    data: {
-      email: email,
-      password: password
-    }
-  })
-  .then((res)=>{
-    console.log(res);
-    localStorage.setItem('token', res.data.token);
-    if(res.data.status === 'success'){
-      console.log('udah ada akunnya');
-      // email-nya udah, cuma lempar token
-      alert(res.data.message)
-    } else if(res.data.status === 'fail'){
-      console.log('blom ada, regis berhasil');
-      // email-nya enggak ada, register trus lempar token
-      alert(res.data.message)
-    }
-    window.location.replace('./index.html')
-  })
-  .catch((err)=>{
-    console.log('ini error------->',err);
-  });
 }
