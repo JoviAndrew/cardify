@@ -13,8 +13,8 @@ const homeRouter = require('./routers/home')
 //=====================
 //Directory Database!
 //=====================
-mongoose.connect('mongodb://localhost/cardify');
-// mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds241699.mlab.com:41699/cardify`);
+// mongoose.connect('mongodb://localhost/cardify');
+mongoose.connect(`mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@ds241699.mlab.com:41699/cardify`);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
